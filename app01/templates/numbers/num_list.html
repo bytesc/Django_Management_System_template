@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-4" >
+            <a class="btn btn-success" style="margin: 10px" href="/numbers/add" target="_blank"> {# blank表示在新页面打开#}
+                <i class="bi bi-plus-circle-fill"></i>
+                新建号码
+            </a>
+            </div>
+            <div class="col-md-5 col-sm-8 ">
+                <form method="get">
+                <div class="d-flex flex-row">
+                    <input class="form-control me-2" type="search" name="q" value="{{ search_data }}" style="margin: 10px" placeholder="搜索" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" style="margin: 10px; width: 100px"><strong>搜索</strong></button>
+                </div>
+                </form>
+            </div>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-dark">
+                <i class="bi bi-calendar2-event-fill"></i>
+                <strong>号码列表</strong>
+            </li>
+            <li class="list-group-item">
+                <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">号码</th>
+                            <th scope="col">价格</th>
+                            <th scope="col">级别</th>
+                          <th scope="col">状态</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for obj in queryset %}
+                        <tr>
+                          <th scope="row">{{ obj.id }}</th>
+                            <td>{{ obj.mobile}}</td>
+                            <td>{{ obj.price}}</td>
+                            <td>{{ obj.get_level_display}}</td>
+                            <td>{{ obj.get_status_display}}</td>
+
+                          <td>
+                              <a class="btn btn-primary btn-sm" href="/numbers/{{ obj.id }}/edit">编辑</a>
+                              <a class="btn btn-danger btn-sm" href="/numbers/delete/?nid={{ obj.id }}">删除</a>
+                          </td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+            </li>
+        </ul>
+        <div style="display: flex; justify-content: center;"> {# 居中 #}
+            <nav aria-label="Page navigation example" style="margin: 10px">
+                <ul class="pagination">
+                    {{ page_nav_string }}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    </div>
+{% endblock %}

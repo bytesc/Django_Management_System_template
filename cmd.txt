@@ -1,0 +1,9 @@
+conda activate django4
+
+django-admin startproject HelloWorld
+python manage.py startapp app01
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py runserver

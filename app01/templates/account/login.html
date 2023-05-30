@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="{% static "bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "MDB5-STANDARD-UI-KIT-Free-6.2.0/css/mdb.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "bootstrap-icons-1.10.4/font/bootstrap-icons.css" %}">
+    <link rel="stylesheet" href="{% static "fontawesome-free-6.4.0-web/css/fontawesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "fontawesome-free-6.4.0-web/css/brands.min.css" %}">
+    <link rel="stylesheet" href="{% static "fontawesome-free-6.4.0-web/css/solid.min.css" %}">
+</head>
+<body>
+
+    <br>
+
+    <div class="container-md">
+        <div class="row">
+            <div class="col-md-4 col-sm-2"></div>
+            <div class="col-md-4 col-sm-8">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-dark">
+                        <i class="bi bi-calendar2-event-fill"></i>
+                        <strong>管理员用户登录</strong>
+                    </li>
+                    <li class="list-group-item">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label class="form-label"><strong>用户名</strong></label>
+                                {{ form.user_name }}
+                                <span style="color: red;">{{ form.user_name.errors.0 }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label"><strong>密码</strong></label>
+                                {{ form.password }}
+                                <span style="color: red;">{{ form.password.errors.0 }}</span>
+                            </div>
+
+{#                            <div class="row">#}
+{#                                <label class="form-label"><strong>验证码</strong></label>#}
+{#                                <div class="col-8">#}
+{#                                    <label>#}
+{#                                        <input class="form-control" type="text" name="yzm">#}
+{#                                    </label>#}
+{#                                </div>#}
+{#                                <div class="col-4">#}
+{#                                    <img id="image_code" src="{% static "img/te.png" %}" alt="验证码" style="width: 100%;height: 100%;">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <br>#}
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8">
+                                    <button type="submit" class="btn btn-success" style="width:100%;">登录</button>
+                                </div>
+                                <div class="col-2"></div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-2"></div>
+        </div>
+    </div>
+
+
+<script src="{% static "bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js" %}"></script>
+<script src="{% static "bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js"%}"></script>
+
+<script src="{% static "MDB5-STANDARD-UI-KIT-Free-6.2.0/js/mdb.min.js" %}"></script>
+</body>
+</html>

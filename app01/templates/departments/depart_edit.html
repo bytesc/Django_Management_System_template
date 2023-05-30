@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div>
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-dark">
+                <i class="bi bi-calendar2-event-fill"></i>
+                <strong>编辑</strong>
+            </li>
+            <li class="list-group-item">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label  class="form-label"><strong>输入名称</strong></label>
+                        <input type="text" class="form-control" placeholder="部门名称" value="{{ title }}" name="new_title">
+                    </div>
+                    <div style="margin: 10px">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
