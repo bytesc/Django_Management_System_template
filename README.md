@@ -1,5 +1,8 @@
 # django_management_system_template
+
 基于Django的管理系统模板。前端，Web应用，mysql数据库。
+
+[个人网站：www.bytesc.club](http://www.bytesc.club)
 
 ## 界面展示
 
