@@ -2,7 +2,7 @@
 
 基于Django的管理系统模板。前端，Web应用，mysql数据库。
 
-[个人网站：www.bytesc.club](http://www.bytesc.club)
+[个人网站：www.bytesc.top](http://www.bytesc.top)
 
 ## 界面展示
 
