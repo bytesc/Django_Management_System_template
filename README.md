@@ -1,6 +1,6 @@
 # django_management_system_template
 
-✨ **基于Django的管理系统模板**：前端，Web应用，mysql数据库。
+✨ **基于 Django 和 Mysql 的的管理系统模板**：后台管理系统，OA ，表单系统，管理员系统，数据库管理系统模板，数据库访问模板。前端后端不分离，Web 应用增删改查数据库。前端，Web应用，mysql数据库。详细注释，高度封装，易复用。
 
 [个人网站：www.bytesc.top](http://www.bytesc.top)
 
