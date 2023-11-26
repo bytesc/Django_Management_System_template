@@ -79,7 +79,7 @@ DATABASES = {
 初始化数据库
 ```bash
 python manage.py makemigrations
-python manage.py makemigrate
+python manage.py migrate
 ```
 
 进入django shell
